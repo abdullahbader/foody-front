@@ -42,7 +42,7 @@ const FormIngrediant = () => {
     event.preventDefault();
     // if (updatedIngrediant) dispatch(updateIngrediant(ingrediant));
     dispatch(createIngrediant(ingrediant));
-    history.push(`/ingrediants`);
+    history.push(`/categories`);
   };
   const handleImage = (event) => {
     SetIngrediant({ ...ingrediant, image: event.target.files[0] });

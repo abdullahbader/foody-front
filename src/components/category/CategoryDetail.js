@@ -1,6 +1,7 @@
 import { Dlink, Titled } from "../../styles";
 import { Redirect, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import CategoryList from "./CategoryList";
 // import DeleteButton from "../buttons/DeleteButton";
 import IngrediantList from "../ingrediant/IngrediantList";
 const CategoryDetail = (props) => {
@@ -20,10 +21,12 @@ const CategoryDetail = (props) => {
 
   return (
     <div>
+      <CategoryList />
+
       <Titled>{category.name}</Titled>
 
       <Dlink to={`/categories/${category.slug}/ingrediants/new`}>
-        Add Ingrediant 🧂
+        Add Ingrediant
       </Dlink>
       <div>
         <IngrediantList ingrediants={categoryIngrediants} />

@@ -17,6 +17,7 @@ const CategoryList = () => {
       category.name.toUpperCase().includes(query.toUpperCase())
     )
     .map((category) => <CategoryItem category={category} key={category.id} />);
+
   return (
     <div>
       {/* <Link to="/categories/form">Add a Category</Link> */}

@@ -14,8 +14,14 @@ const NavProduct = () => {
             Category
           </Link>
         </li>
+        <li class="nav-item">
+          <Link to="/ingrediants" class="nav-link" href="#">
+            All Ingrediants
+          </Link>
+        </li>
       </ul>
     </Div>
   );
 };
+
 export default NavProduct;
