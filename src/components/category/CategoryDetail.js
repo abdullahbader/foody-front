@@ -20,9 +20,9 @@ const CategoryDetail = (props) => {
 
   return (
     <DetailWrapper>
-      <Link to={`/categories/${category.slug}/ingrediants/new`}>Add peoduct</Link>
+      <Link to={`/categories/${category.slug}/ingrediants/new`}>Add Ingrediant</Link>
       <h1>{category.name}</h1>
-      <Image src={category.image} alt={category.name} />
+    
       <IngrediantList ingrediants={categoryIngrediants} />
       {/* <button onClick={() => props.setCrrrentCategory(null)}>Go Back</button>
       <DeleteButton categoryID={category.id} /> */}

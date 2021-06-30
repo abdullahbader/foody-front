@@ -7,11 +7,14 @@ import { Route, Switch } from "react-router";
  //import ProductDetail from "./ProductDetail";
  import CategoryList from "./category/CategoryList";
  import CategoryDetail from "./category/CategoryDetail";
-
+ import AddIngrediant from "./ingrediant/AddIngrediant"
 function Routes(props) {
   return (
     <Switch>
-      <Route exact path="/categories/:categorySlug">
+      <Route path="/categories/:categorySlug/ingrediants/new">
+        <AddIngrediant/>
+      </Route>
+      <Route  path="/categories/:categorySlug">
         <CategoryDetail />
       </Route>
 
