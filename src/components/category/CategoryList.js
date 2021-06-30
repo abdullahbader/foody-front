@@ -1,25 +1,29 @@
 import { useState } from "react";
- import { Link } from "react-router-dom";
 //components
 import CategoryItem from "./CategoryItem";
-//import SearchBar from "../SearchBar";
+import SearchBar from "../SearchBar";
 
 // Styling
-import { List } from "../../styles";
+import { List, Dlink, H3 } from "../../styles";
 
 import { useSelector } from "react-redux";
 
 const CategoryList = () => {
- // const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("");
   const categories = useSelector((state) => state.categories.categories);
- // .filter((category) => category.name.toUpperCase().includes(query.toUpperCase()))
-console.log(categories)
-  let categoryArray = categories.map((category) => <CategoryItem category={category} key={category.id} />);
+  console.log(categories);
+  let categoryArray = categories
+    .filter((category) =>
+      category.name.toUpperCase().includes(query.toUpperCase())
+    )
+    .map((category) => <CategoryItem category={category} key={category.id} />);
   return (
     <div>
       {/* <Link to="/categories/form">Add a Category</Link> */}
-      {/* <SearchBar setQuery={setQuery} /> */}
-      <Link to="/n">add category</Link>
+      <H3>Categories</H3>
+      <Dlink to="/categories/new">Add Category 🧂</Dlink>
+
+      <SearchBar setQuery={setQuery} />
 
       <List>{categoryArray}</List>
     </div>

@@ -5,33 +5,33 @@ import { useParams } from "react-router-dom";
 
 import { useHistory } from "react-router-dom";
 //actions
-import { createIngrediant } from "../../store/actions/ingrediantActions"
+import { createIngrediant } from "../../store/actions/ingrediantActions";
 //import { updateIngrediant } from "../store/actions/ingrediantActions";
 
 const FormIngrediant = () => {
   //const ingrediants = useSelector((state) => state.ingrediants.ingrediants);
- // const ingrediantSlug = useParams().ingrediantSlug;
+  // const ingrediantSlug = useParams().ingrediantSlug;
 
   const categories = useSelector((state) => state.categories.categories);
-  const ingrediantSlug = useParams().ingrediantSlug;
+  // const ingrediantSlug = useParams().ingrediantSlug;
   const categorySlug = useParams().categorySlug;
   const ingrediants = useSelector((state) => state.ingrediants.ingrediants);
 
+  console.log(ingrediants);
 
-  console.log(ingrediants)
-
-  const updatedIngrediant = ingrediants.find(
-    (ingrediant) => ingrediant.slug === ingrediantSlug
-  );
+  // const updatedIngrediant = ingrediants.find(
+  //   (ingrediant) => ingrediant.slug === ingrediantSlug
+  // );
   const [ingrediant, SetIngrediant] = useState(
-   // updatedIngrediant
-     // ? updatedIngrediant
-      //: 
-      {
-        categoryId: categories.find((category) => category.slug === categorySlug).id,
-        name: "",
-          image: "",
-        }
+    // updatedIngrediant
+    // ? updatedIngrediant
+    //:
+    {
+      categoryId: categories.find((category) => category.slug === categorySlug)
+        .id,
+      name: "",
+      image: "",
+    }
   );
   const dispatch = useDispatch();
   const history = useHistory();
@@ -40,9 +40,9 @@ const FormIngrediant = () => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-   // if (updatedIngrediant) dispatch(updateIngrediant(ingrediant));
+    // if (updatedIngrediant) dispatch(updateIngrediant(ingrediant));
     dispatch(createIngrediant(ingrediant));
-    history.push("/ingrediants");
+    history.push(`/ingrediants`);
   };
   const handleImage = (event) => {
     SetIngrediant({ ...ingrediant, image: event.target.files[0] });
@@ -64,8 +64,6 @@ const FormIngrediant = () => {
           value={ingrediant.name}
         />
       </div>
-     
-      
       <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">
           Ingrediant image

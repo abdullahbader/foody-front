@@ -1,5 +1,4 @@
-import { Image } from "../../styles";
-import { Link } from "react-router-dom";
+import { Clink } from "../../styles";
 // import DeleteButton from "../buttons/DeleteButton";
 const CategoriesItem = (props) => {
   const category = props.category;
@@ -8,10 +7,9 @@ const CategoriesItem = (props) => {
       {/* <UpdateButtonStyled to={/categories/${category.slug}/edit}>
         Update category
       </UpdateButtonStyled> /} */}
-      <Link to={`/categories/${category.slug}`}>
-      <h1>{category.name}</h1>
-
-      </Link>
+      <Clink to={`/categories/${category.slug}`}>
+        <h1>{category.name}</h1>
+      </Clink>
     </div>
   );
 };

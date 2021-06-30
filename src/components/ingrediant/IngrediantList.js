@@ -1,23 +1,26 @@
 import { useState } from "react";
 //components
 import IngrediantItem from "./IngrediantItem";
-//import SearchBar from "./SearchBar";
+import SearchBar from "../SearchBar";
 
 // Styling
+import { List } from "../../styles";
 const IngrediantList = ({ ingrediants }) => {
-  // const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("");
   //const ingrediants = useSelector((state) => state.ingrediants.ingrediants);
 
-  let ingrediantArray = ingrediants.map((ingrediant) => <IngrediantItem ingrediant={ingrediant} key={ingrediant.id} />);
+  let ingrediantArray = ingrediants
+    .filter((ingrediant) =>
+      ingrediant.name.toUpperCase().includes(query.toUpperCase())
+    )
+    .map((ingrediant) => (
+      <IngrediantItem ingrediant={ingrediant} key={ingrediant.id} />
+    ));
 
-    // .filter((ingrediant) =>
-    //   ingrediant.name.toUpperCase().includes(query.toUpperCase())
-    // )
   return (
     <div>
-     
-     {/* <SearchBar setQuery={setQuery} /> */}
-      <ul>{ingrediantArray}</ul>
+      <SearchBar setQuery={setQuery} />
+      <List>{ingrediantArray}</List>
     </div>
   );
 };

@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
+import { Image, H3 } from "../../styles";
 const IngrediantItem = (props) => {
   const ingrediant = props.ingrediant;
   return (
     <div>
-    {/* <UpdateButtonStyled to={/shops/${shop.slug}/edit}>
+      {/* <UpdateButtonStyled to={/shops/${shop.slug}/edit}>
         Update shop
       </UpdateButtonStyled> */}
       <Link to={`/ingrediants/${ingrediant.slug}`}>
-        <img src={ingrediant.image} alt={ingrediant.name} />
+        <Image src={ingrediant.image} alt={ingrediant.name} />
       </Link>
-      <h1>{ingrediant.name}</h1>
+      <H3>{ingrediant.name}</H3>
     </div>
   );
 };

@@ -1,42 +1,11 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
-
-export const GlobalStyle = createGlobalStyle`
-align-items: center;
-h1{
-    font-family: cursive;
-}
-
-body
-{
-  color: ${(props) => props.theme.mainColor} ;
-  background-color: ${(props) => props.theme.backgroundColor}
-
-};
-
-
-`;
-
-export const theme = {
-  light: {
-    mainColor: "#242424", // main font color
-    backgroundColor: "#fefafb", // main background color
-    pink: "#ff85a2",
-    red: "#ff3232",
-  },
-  dark: {
-    mainColor: "#fefafb", // main font color
-    backgroundColor: "#242424", // main background color
-    pink: "#ff85a2",
-    red: "#ff3232",
-  },
-};
 
 export const Title = styled.h1`
   text-align: center;
-  color: #e9d2c0;
+  color: wheat;
 
-  background-color: #4b3f72;
+  background-color: #82c0cc;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
@@ -46,6 +15,7 @@ export const Title = styled.h1`
 `;
 export const Description = styled.h4`
   text-align: center;
+  color: wheat;
 `;
 
 export const CoverImg = styled.img`
@@ -54,13 +24,13 @@ export const CoverImg = styled.img`
 `;
 
 export const Image = styled.img`
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 `;
 
 export const List = styled.div`
   display: flex;
-  padding: 15px;
+  padding: 10px;
   text-align: center;
   justify-content: space-around;
 `;
@@ -104,9 +74,9 @@ export const DeleteButtonStyled = styled.button`
   background-color: green;
 `;
 
-export const NavBar = styled.div`
-  background-color: #333;
-  overflow: hidden;
+export const Div = styled.div`
+  margin-top: 10px;
+  margin-bottom: 70px;
 `;
 
 export const Logo = styled(Link)`
@@ -120,3 +90,47 @@ export const NavProducts = styled(NavLink)`
 `;
 
 export const UpdateButtonStyled = styled(Link)``;
+
+export const Dlink = styled(Link)`
+  text-decoration: none;
+  font-family: cursive;
+  color: #f8961e;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(6px + 2vmin);
+`;
+export const Titled = styled.h2`
+  margin-top: 40px;
+  color: #ffd60a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+export const Body = styled.div`
+  background-image: url(https://www.topbest7.in/wp-content/uploads/2020/11/cutting-board-925544_1280-1-1.jpg);
+  height: 1300px;
+`;
+
+export const H3 = styled.h3`
+  color: #ffd60a;
+  font-family: cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+export const Clink = styled(Link)`
+  text-decoration: none;
+  font-family: cursive;
+  color: #ffd60a;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(6px + 2vmin);
+`;
