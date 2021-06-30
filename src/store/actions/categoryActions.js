@@ -15,3 +15,30 @@ export const fetchCategories = () => {
     }
   };
 };
+
+
+
+export const addCategory=(newCategory)=>{
+
+  return async (dispatch)=>{
+
+
+    try { 
+    const formData=new FormData()
+    for(const key in newCategory){formData.append(key,newCategory[key])}
+    const res = await axios.post("http://localhost:8000/categories",formData);
+    dispatch({
+    type:actionTypes.ADD_CATEGORY,
+     payload:{
+      newCategory:res.data}
+  })
+      
+      
+    } catch (error) {
+      console.log(error);
+
+    }
+           
+
+  }
+}

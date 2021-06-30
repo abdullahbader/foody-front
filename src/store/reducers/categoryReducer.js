@@ -8,7 +8,7 @@ const initialState = {
 
 const categoryReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.CREATE_CATEGORY:
+    case actionTypes.ADD_CATEGORY:
       return {
         ...state,
         categories: [...state.categories, action.payload.newCategory],
@@ -20,6 +20,7 @@ const categoryReducer = (state = initialState, action) => {
         categories: action.payload,
         loading: false,
       };
+      
     default:
       return state;
   }

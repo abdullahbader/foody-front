@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { Link } from "react-router-dom";
+ import { Link } from "react-router-dom";
 //components
 import CategoryItem from "./CategoryItem";
 //import SearchBar from "../SearchBar";
@@ -19,6 +19,8 @@ console.log(categories)
     <div>
       {/* <Link to="/categories/form">Add a Category</Link> */}
       {/* <SearchBar setQuery={setQuery} /> */}
+      <Link to="/n">add category</Link>
+
       <List>{categoryArray}</List>
     </div>
   );
